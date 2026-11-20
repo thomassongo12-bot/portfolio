@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "name": "WALTEN",
+        "type_fr": "Application SaaS de gestion commerciale",
+        "type_en": "Commercial Management SaaS Application",
+        "description_fr": "Plateforme de gestion destinée aux boutiques de téléphones. Elle permet de gérer les stocks, les ventes, les clients, les réparations et les échanges de téléphones.",
+        "description_en": "Management platform for phone shops. It allows managing stock, sales, customers, repairs and phone exchanges.",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "NestJS",
+            "PostgreSQL",
+            "Prisma"
+        ],
+        "image": "assets\/images\/projects\/walten-1795134857.jpg",
+        "demo_url": "https:\/\/walten.org\/",
+        "github_url": "",
+        "color": "#2563eb"
+    },
+    {
+        "id": 2,
+        "name": "K-STORE",
+        "type_fr": "Application de gestion commerciale",
+        "type_en": "Commercial Management Application",
+        "description_fr": "Solution de gestion pour une boutique de téléphones avec gestion des produits, clients, ventes et tableau de bord administratif.",
+        "description_en": "Management solution for a phone shop with product, customer, sales management and administrative dashboard.",
+        "technologies": [
+            "C#",
+            "Windows Forms",
+            "SQL Server"
+        ],
+        "image": "assets\/images\/projects\/k-store-1795135212.jpg",
+        "demo_url": "",
+        "github_url": "",
+        "color": "#0f172a"
+    },
+    {
+        "id": 3,
+        "name": "MBOA CV",
+        "type_fr": "Plateforme de création de documents",
+        "type_en": "Document Creation Platform",
+        "description_fr": "Plateforme permettant aux utilisateurs de créer des CV professionnels et différents documents administratifs à travers des modèles personnalisables.\r\nProjet en cours de développements ...",
+        "description_en": "Platform allowing users to create professional CVs and various administrative documents through customizable templates.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "NextJs",
+            "Postgre",
+            "React",
+            "Prisma"
+        ],
+        "image": "assets\/images\/projects\/mboa-cv-1795135571.png",
+        "demo_url": "",
+        "github_url": "",
+        "color": "#1b9834"
+    },
+    {
+        "id": 4,
+        "name": "TRACKXA",
+        "type_fr": "Plateforme de suivi de colis",
+        "type_en": "Package Tracking Platform",
+        "description_fr": "Solution web dédiée au suivi des expéditions et à la consultation des informations relatives aux colis.",
+        "description_en": "Web solution dedicated to tracking shipments and consulting package information.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "SQL"
+        ],
+        "image": "assets\/images\/projects\/trackxa-1795134444.png",
+        "demo_url": "https:\/\/trackxa.com\/",
+        "github_url": "",
+        "color": "#0f172a"
+    },
+    {
+        "id": 5,
+        "name": "Karim Telecom",
+        "type_fr": "Site web commercial",
+        "type_en": "Commercial Website",
+        "description_fr": "Plateforme de présentation de produits et services autour de la vente de téléphones, avec une interface destinée à faciliter la découverte des annonces de la boutique Karim télécom.",
+        "description_en": "Platform presenting products and services around puppy sales, with an interface designed to facilitate the discovery of listings.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "SQL"
+        ],
+        "image": "assets\/images\/projects\/karim-telecom-1795135395.png",
+        "demo_url": "https:\/\/navajowhite-newt-818823.hostingersite.com\/",
+        "github_url": "",
+        "color": "#2563eb"
+    }
+]

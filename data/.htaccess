@@ -1,0 +1,5 @@
+# Bloquer l'accès direct aux fichiers JSON depuis le navigateur
+<FilesMatch "\.json$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>

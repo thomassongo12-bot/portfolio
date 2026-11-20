@@ -1,0 +1,43 @@
+# ── Données sensibles – NE JAMAIS pousser sur GitHub ──────
+data/auth.json
+data/bruteforce.json
+data/security.log
+data/messages.json
+data/settings.json
+
+# ── Fichiers personnels uploadés ──────────────────────────
+assets/images/profile.jpg
+assets/images/profile.png
+assets/images/profile.webp
+assets/files/*.pdf
+assets/images/projects/*.jpg
+assets/images/projects/*.jpeg
+assets/images/projects/*.png
+assets/images/projects/*.webp
+assets/images/projects/*.gif
+
+# ── OS & Éditeurs ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# ── Logs & temporaires ────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.cache
+
+# ── PHP vendor (si ajouté plus tard) ─────────────────────
+vendor/
+composer.lock
+
+# ── Node (si ajouté plus tard) ───────────────────────────
+node_modules/
+.env
+.env.local

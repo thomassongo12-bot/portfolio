@@ -1,0 +1,17 @@
+{
+    "name": "Rodrigue Ekoko",
+    "profession_fr": "Développeur Web & Logiciel",
+    "profession_en": "Web & Software Developer",
+    "email": "votre.email@example.com",
+    "phone": "+237 6XX XXX XXX",
+    "whatsapp": "237600000000",
+    "location_fr": "Cameroun",
+    "location_en": "Cameroon",
+    "linkedin": "https://www.linkedin.com/in/votre-profil",
+    "github": "https://github.com/votre-username",
+    "site_url": "https://votre-domaine.com",
+    "cv_filename": "CV-Rodrigue-Ekoko.pdf",
+    "profile_photo": "",
+    "about_fr": "Votre présentation en français...",
+    "about_en": "Your presentation in English..."
+}

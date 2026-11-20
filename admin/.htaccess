@@ -1,0 +1,20 @@
+# Admin – Sécurité renforcée
+Options -Indexes -ExecCGI
+
+# Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(json|log|sql|sh|env|bak|swp|git)$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>
+
+# Headers de sécurité
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin"
+  Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header always set Pragma "no-cache"
+  # CSP strict pour l'admin
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+</IfModule>
