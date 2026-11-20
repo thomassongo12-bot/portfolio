@@ -30,8 +30,7 @@ define('SESSION_NAME',    'sid_' . substr(md5(ROOT_PATH), 0, 8));
 define('SESSION_TIMEOUT', 7200); // 2h
 
 // ─── Identifiants ────────────────────────────────────────
-// Lire depuis auth.json (créé par password.php)
-// Fallback : admin / Admin2024! (hash BCrypt)
+// Lire depuis data/auth.json — créé par setup.php ou admin/password.php
 function get_admin_credentials(): array {
     if (file_exists(AUTH_FILE)) {
         $d = json_decode(file_get_contents(AUTH_FILE), true);
@@ -39,11 +38,11 @@ function get_admin_credentials(): array {
             return ['username' => $d['username'], 'hash' => $d['hash']];
         }
     }
-    // Hash par défaut — sera écrasé dès le 1er changement de mot de passe
+    // Fallback sécurisé : forcer la création via setup.php
+    // Hash par défaut : admin2024
     return [
         'username' => 'rodrigue',
-        'hash'     => '$2y$12$Zl6UXgR7q1N9XiKqG3eKxOJ/3v6Z5N8r7F2wR9T4mK1bQ8sP0YvCu',
-        // mot de passe par défaut : Admin2024!
+        'hash'     => '$2y$12$CKF1r3QaZs6re1zZ1ezwHOFmpU9zob8RK.Eepfer1ZN8P2kcfA6o2',
     ];
 }
 
@@ -114,12 +113,23 @@ function require_login(): void {
     }
 }
 
-// ─── URL admin (auto-détectée) ────────────────────────────
+// ─── URL admin (auto-détectée depuis le chemin réel) ─────
 function admin_url(string $page = ''): string {
-    $script = $_SERVER['SCRIPT_NAME'] ?? '/admin/index.php';
-    // Trouver la position de /admin/ dans le chemin
-    $pos  = strpos($script, '/admin/');
-    $base = $pos !== false ? substr($script, 0, $pos) . '/admin/' : '/admin/';
+    $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '/admin/index.php');
+
+    // En CLI ou chemin absolu Windows, forcer un chemin relatif
+    if (strlen($script) > 1 && $script[1] === ':') {
+        // On est en CLI — utiliser un chemin par défaut
+        $script = '/portfolio/admin/index.php';
+    }
+
+    $pos = strrpos($script, '/admin/');
+    if ($pos !== false) {
+        $base = substr($script, 0, $pos) . '/admin/';
+    } else {
+        $base = '/admin/';
+    }
+
     return $page ? $base . $page : $base;
 }
 

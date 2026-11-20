@@ -2,12 +2,13 @@
 require_once __DIR__ . '/config.php';
 require_login();
 
+$settings     = get_settings();
 $projects     = read_json(PROJECTS_FILE, []);
 $messages     = read_json(MESSAGES_FILE, []);
 $unreadM      = count(array_filter($messages, fn($m) => empty($m['read'])));
 $totalMsg     = count($messages);
 $totalProj    = count($projects);
-$cv_exists    = file_exists(FILES_PATH . '/' . $settings['cv_filename']);
+$cv_exists    = file_exists(FILES_PATH . '/' . ($settings['cv_filename'] ?? 'CV.pdf'));
 $photo_exists = !empty($settings['profile_photo']) && file_exists(UPLOADS_PATH . '/' . $settings['profile_photo']);
 
 $title = 'Tableau de bord';
